@@ -22,9 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            configureWindowForMVVM(window)
+            //configureWindowForMVVM(window)
             //configureWindowForVIPER(window)
-            //configureWindowForRedux(window)
+            configureWindowForRedux(window)
             
             self.window = window
             window.makeKeyAndVisible()
@@ -38,12 +38,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         authCoordinator.start()
     }
     
-    private func configureWindowForVIPER(window: UIWindow) {
+    private func configureWindowForVIPER(_ window: UIWindow) {
         
     }
     
-    private func configureWindowForRedux(window: UIWindow) {
+    private func configureWindowForRedux(_ window: UIWindow) {
+        let state = AppState(
+            authentication: AuthenticationState(),
+            jobs: JobsState()
+        )
+        let store = Store<AppState, AppAction, AppEnvironmentProtocol>(
+            initialState: state,
+            reducer: appReducer(state:action:environment:),
+            environment: AppEnvironment())
         
+        let containerView = ContainerReduxView().environmentObject(store)
+        let viewController = UIHostingController(rootView: containerView)
+        window.rootViewController = viewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

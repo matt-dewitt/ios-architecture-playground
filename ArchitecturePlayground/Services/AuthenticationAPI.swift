@@ -20,7 +20,7 @@ protocol AuthenticationAPIProtocol  {
 class MockAuthenticationAPI: AuthenticationAPIProtocol {
     func authenticate(username: String, password: String) -> AnyPublisher<UserSession, AuthenticationAPIError> {
         if username == "testy" && password == "tester" {
-            let session = UserSession(username: username, authToken: UUID().uuidString, shouldChangePassword: false)
+            let session = UserSession(username: username, authToken: UUID().uuidString)
             return Just(session)
                 .setFailureType(to: AuthenticationAPIError.self)
                 .eraseToAnyPublisher()
