@@ -9,12 +9,32 @@
 /* Begin PBXBuildFile section */
 		7235ED0B24F8037F00836CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED0A24F8037F00836CC0 /* AppDelegate.swift */; };
 		7235ED0D24F8037F00836CC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED0C24F8037F00836CC0 /* SceneDelegate.swift */; };
-		7235ED0F24F8037F00836CC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED0E24F8037F00836CC0 /* ContentView.swift */; };
 		7235ED1124F8038100836CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7235ED1024F8038100836CC0 /* Assets.xcassets */; };
 		7235ED1424F8038100836CC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7235ED1324F8038100836CC0 /* Preview Assets.xcassets */; };
 		7235ED1724F8038100836CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7235ED1524F8038100836CC0 /* LaunchScreen.storyboard */; };
 		7235ED2224F8038100836CC0 /* ArchitecturePlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED2124F8038100836CC0 /* ArchitecturePlaygroundTests.swift */; };
 		7235ED2D24F8038100836CC0 /* ArchitecturePlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED2C24F8038100836CC0 /* ArchitecturePlaygroundUITests.swift */; };
+		7235ED3C24F803C200836CC0 /* AuthVIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED3B24F803C200836CC0 /* AuthVIPER.swift */; };
+		72EDCC4724FE8F0900A511A1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC4624FE8F0900A511A1 /* AuthenticationView.swift */; };
+		72EDCC4924FE8F1700A511A1 /* JobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC4824FE8F1700A511A1 /* JobListView.swift */; };
+		72EDCC4B24FE8F2400A511A1 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC4A24FE8F2400A511A1 /* JobDetailView.swift */; };
+		72EDCC5024FE924500A511A1 /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC4F24FE924500A511A1 /* AuthenticationAPI.swift */; };
+		72EDCC5924FE974B00A511A1 /* AuthenticationMVVMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC5824FE974B00A511A1 /* AuthenticationMVVMView.swift */; };
+		72EDCC5B24FE978500A511A1 /* AuthenticationMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC5A24FE978500A511A1 /* AuthenticationMVVMViewModel.swift */; };
+		72EDCC5D24FE979600A511A1 /* AuthenticationMVVMCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC5C24FE979600A511A1 /* AuthenticationMVVMCoordinator.swift */; };
+		72EDCC6024FE994200A511A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC5F24FE994200A511A1 /* Coordinator.swift */; };
+		72FB426124FE9DC20013EFA5 /* UserSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB426024FE9DC20013EFA5 /* UserSessionStore.swift */; };
+		72FB426424FE9E860013EFA5 /* UserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB426324FE9E860013EFA5 /* UserSessionRepository.swift */; };
+		72FB426724FEA7C00013EFA5 /* PublisherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB426624FEA7C00013EFA5 /* PublisherExtensions.swift */; };
+		72FB426B24FEABD50013EFA5 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB426A24FEABD50013EFA5 /* UserSession.swift */; };
+		72FB426D24FEABEB0013EFA5 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB426C24FEABEB0013EFA5 /* Job.swift */; };
+		72FB426F24FEB3550013EFA5 /* JobListMVVMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB426E24FEB3550013EFA5 /* JobListMVVMView.swift */; };
+		72FB427124FEB36B0013EFA5 /* JobListMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427024FEB36B0013EFA5 /* JobListMVVMViewModel.swift */; };
+		72FB427324FEB37C0013EFA5 /* JobListMVVMCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427224FEB37C0013EFA5 /* JobListMVVMCoordinator.swift */; };
+		72FB427524FEB5AB0013EFA5 /* JobsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427424FEB5AB0013EFA5 /* JobsAPI.swift */; };
+		72FB427824FEC6770013EFA5 /* JobDetailsMVVMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427724FEC6770013EFA5 /* JobDetailsMVVMView.swift */; };
+		72FB427A24FEC68E0013EFA5 /* JobDetailsMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427924FEC68E0013EFA5 /* JobDetailsMVVMViewModel.swift */; };
+		72FB427C24FEC69E0013EFA5 /* JobDetailsMVVMCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427B24FEC69E0013EFA5 /* JobDetailsMVVMCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +58,6 @@
 		7235ED0724F8037F00836CC0 /* ArchitecturePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchitecturePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7235ED0A24F8037F00836CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7235ED0C24F8037F00836CC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7235ED0E24F8037F00836CC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7235ED1024F8038100836CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7235ED1324F8038100836CC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7235ED1624F8038100836CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +68,27 @@
 		7235ED2824F8038100836CC0 /* ArchitecturePlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitecturePlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7235ED2C24F8038100836CC0 /* ArchitecturePlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitecturePlaygroundUITests.swift; sourceTree = "<group>"; };
 		7235ED2E24F8038100836CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7235ED3B24F803C200836CC0 /* AuthVIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVIPER.swift; sourceTree = "<group>"; };
+		72EDCC4624FE8F0900A511A1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		72EDCC4824FE8F1700A511A1 /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
+		72EDCC4A24FE8F2400A511A1 /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
+		72EDCC4F24FE924500A511A1 /* AuthenticationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
+		72EDCC5824FE974B00A511A1 /* AuthenticationMVVMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationMVVMView.swift; sourceTree = "<group>"; };
+		72EDCC5A24FE978500A511A1 /* AuthenticationMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationMVVMViewModel.swift; sourceTree = "<group>"; };
+		72EDCC5C24FE979600A511A1 /* AuthenticationMVVMCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationMVVMCoordinator.swift; sourceTree = "<group>"; };
+		72EDCC5F24FE994200A511A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		72FB426024FE9DC20013EFA5 /* UserSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionStore.swift; sourceTree = "<group>"; };
+		72FB426324FE9E860013EFA5 /* UserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepository.swift; sourceTree = "<group>"; };
+		72FB426624FEA7C00013EFA5 /* PublisherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExtensions.swift; sourceTree = "<group>"; };
+		72FB426A24FEABD50013EFA5 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		72FB426C24FEABEB0013EFA5 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		72FB426E24FEB3550013EFA5 /* JobListMVVMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListMVVMView.swift; sourceTree = "<group>"; };
+		72FB427024FEB36B0013EFA5 /* JobListMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListMVVMViewModel.swift; sourceTree = "<group>"; };
+		72FB427224FEB37C0013EFA5 /* JobListMVVMCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListMVVMCoordinator.swift; sourceTree = "<group>"; };
+		72FB427424FEB5AB0013EFA5 /* JobsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsAPI.swift; sourceTree = "<group>"; };
+		72FB427724FEC6770013EFA5 /* JobDetailsMVVMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsMVVMView.swift; sourceTree = "<group>"; };
+		72FB427924FEC68E0013EFA5 /* JobDetailsMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsMVVMViewModel.swift; sourceTree = "<group>"; };
+		72FB427B24FEC69E0013EFA5 /* JobDetailsMVVMCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsMVVMCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +139,14 @@
 		7235ED0924F8037F00836CC0 /* ArchitecturePlayground */ = {
 			isa = PBXGroup;
 			children = (
-				7235ED0A24F8037F00836CC0 /* AppDelegate.swift */,
-				7235ED0C24F8037F00836CC0 /* SceneDelegate.swift */,
-				7235ED0E24F8037F00836CC0 /* ContentView.swift */,
+				72FB426924FEABC70013EFA5 /* Model */,
+				72FB426524FEA7B00013EFA5 /* Extensions */,
+				72FB426224FE9E670013EFA5 /* Repositories */,
+				72EDCC4E24FE922E00A511A1 /* Services */,
+				72EDCC4524FE8EF000A511A1 /* Base Views */,
+				72EDCC5624FE971200A511A1 /* MVVM */,
+				7235ED3A24F8039B00836CC0 /* VIPER */,
+				72EDCC4424FE8EB200A511A1 /* System */,
 				7235ED1024F8038100836CC0 /* Assets.xcassets */,
 				7235ED1524F8038100836CC0 /* LaunchScreen.storyboard */,
 				7235ED1824F8038100836CC0 /* Info.plist */,
@@ -134,6 +179,117 @@
 				7235ED2E24F8038100836CC0 /* Info.plist */,
 			);
 			path = ArchitecturePlaygroundUITests;
+			sourceTree = "<group>";
+		};
+		7235ED3A24F8039B00836CC0 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				7235ED3B24F803C200836CC0 /* AuthVIPER.swift */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		72EDCC4424FE8EB200A511A1 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				7235ED0A24F8037F00836CC0 /* AppDelegate.swift */,
+				7235ED0C24F8037F00836CC0 /* SceneDelegate.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		72EDCC4524FE8EF000A511A1 /* Base Views */ = {
+			isa = PBXGroup;
+			children = (
+				72EDCC4624FE8F0900A511A1 /* AuthenticationView.swift */,
+				72EDCC4824FE8F1700A511A1 /* JobListView.swift */,
+				72EDCC4A24FE8F2400A511A1 /* JobDetailView.swift */,
+			);
+			path = "Base Views";
+			sourceTree = "<group>";
+		};
+		72EDCC4E24FE922E00A511A1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				72EDCC4F24FE924500A511A1 /* AuthenticationAPI.swift */,
+				72FB426024FE9DC20013EFA5 /* UserSessionStore.swift */,
+				72FB427424FEB5AB0013EFA5 /* JobsAPI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		72EDCC5624FE971200A511A1 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				72EDCC5E24FE993500A511A1 /* Common */,
+				72EDCC5724FE972700A511A1 /* Authentication */,
+				72FB426824FEA9A10013EFA5 /* Job List */,
+				72FB427624FEC65F0013EFA5 /* Job Details */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		72EDCC5724FE972700A511A1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				72EDCC5824FE974B00A511A1 /* AuthenticationMVVMView.swift */,
+				72EDCC5A24FE978500A511A1 /* AuthenticationMVVMViewModel.swift */,
+				72EDCC5C24FE979600A511A1 /* AuthenticationMVVMCoordinator.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		72EDCC5E24FE993500A511A1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				72EDCC5F24FE994200A511A1 /* Coordinator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		72FB426224FE9E670013EFA5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				72FB426324FE9E860013EFA5 /* UserSessionRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		72FB426524FEA7B00013EFA5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				72FB426624FEA7C00013EFA5 /* PublisherExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72FB426824FEA9A10013EFA5 /* Job List */ = {
+			isa = PBXGroup;
+			children = (
+				72FB426E24FEB3550013EFA5 /* JobListMVVMView.swift */,
+				72FB427024FEB36B0013EFA5 /* JobListMVVMViewModel.swift */,
+				72FB427224FEB37C0013EFA5 /* JobListMVVMCoordinator.swift */,
+			);
+			path = "Job List";
+			sourceTree = "<group>";
+		};
+		72FB426924FEABC70013EFA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72FB426A24FEABD50013EFA5 /* UserSession.swift */,
+				72FB426C24FEABEB0013EFA5 /* Job.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72FB427624FEC65F0013EFA5 /* Job Details */ = {
+			isa = PBXGroup;
+			children = (
+				72FB427724FEC6770013EFA5 /* JobDetailsMVVMView.swift */,
+				72FB427924FEC68E0013EFA5 /* JobDetailsMVVMViewModel.swift */,
+				72FB427B24FEC69E0013EFA5 /* JobDetailsMVVMCoordinator.swift */,
+			);
+			path = "Job Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +355,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = ServiceTitan;
 				TargetAttributes = {
 					7235ED0624F8037F00836CC0 = {
@@ -267,9 +423,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72FB427324FEB37C0013EFA5 /* JobListMVVMCoordinator.swift in Sources */,
+				72EDCC5B24FE978500A511A1 /* AuthenticationMVVMViewModel.swift in Sources */,
+				72FB427524FEB5AB0013EFA5 /* JobsAPI.swift in Sources */,
 				7235ED0B24F8037F00836CC0 /* AppDelegate.swift in Sources */,
 				7235ED0D24F8037F00836CC0 /* SceneDelegate.swift in Sources */,
-				7235ED0F24F8037F00836CC0 /* ContentView.swift in Sources */,
+				72EDCC4724FE8F0900A511A1 /* AuthenticationView.swift in Sources */,
+				72EDCC5924FE974B00A511A1 /* AuthenticationMVVMView.swift in Sources */,
+				72EDCC4B24FE8F2400A511A1 /* JobDetailView.swift in Sources */,
+				72FB426F24FEB3550013EFA5 /* JobListMVVMView.swift in Sources */,
+				72EDCC5024FE924500A511A1 /* AuthenticationAPI.swift in Sources */,
+				72FB426424FE9E860013EFA5 /* UserSessionRepository.swift in Sources */,
+				72EDCC5D24FE979600A511A1 /* AuthenticationMVVMCoordinator.swift in Sources */,
+				72FB427C24FEC69E0013EFA5 /* JobDetailsMVVMCoordinator.swift in Sources */,
+				72EDCC6024FE994200A511A1 /* Coordinator.swift in Sources */,
+				72FB427A24FEC68E0013EFA5 /* JobDetailsMVVMViewModel.swift in Sources */,
+				72EDCC4924FE8F1700A511A1 /* JobListView.swift in Sources */,
+				72FB427824FEC6770013EFA5 /* JobDetailsMVVMView.swift in Sources */,
+				72FB426124FE9DC20013EFA5 /* UserSessionStore.swift in Sources */,
+				7235ED3C24F803C200836CC0 /* AuthVIPER.swift in Sources */,
+				72FB426D24FEABEB0013EFA5 /* Job.swift in Sources */,
+				72FB427124FEB36B0013EFA5 /* JobListMVVMViewModel.swift in Sources */,
+				72FB426724FEA7C00013EFA5 /* PublisherExtensions.swift in Sources */,
+				72FB426B24FEABD50013EFA5 /* UserSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +518,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -366,7 +543,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -402,6 +579,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -420,7 +598,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
