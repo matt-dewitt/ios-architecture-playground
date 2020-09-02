@@ -42,6 +42,8 @@
 		72FB428B24FEE4030013EFA5 /* AuthenticationReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428A24FEE4030013EFA5 /* AuthenticationReduxView.swift */; };
 		72FB428D24FEE54A0013EFA5 /* ContainerReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428C24FEE54A0013EFA5 /* ContainerReduxView.swift */; };
 		72FB428F24FEE78C0013EFA5 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428E24FEE78C0013EFA5 /* AppEnvironment.swift */; };
+		72FB429A24FFE77D0013EFA5 /* JobListReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB429924FFE77D0013EFA5 /* JobListReduxView.swift */; };
+		72FB429C24FFF1780013EFA5 /* JobDetailsReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB429B24FFF1780013EFA5 /* JobDetailsReduxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		72FB428A24FEE4030013EFA5 /* AuthenticationReduxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationReduxView.swift; sourceTree = "<group>"; };
 		72FB428C24FEE54A0013EFA5 /* ContainerReduxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerReduxView.swift; sourceTree = "<group>"; };
 		72FB428E24FEE78C0013EFA5 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		72FB429924FFE77D0013EFA5 /* JobListReduxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListReduxView.swift; sourceTree = "<group>"; };
+		72FB429B24FFF1780013EFA5 /* JobDetailsReduxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsReduxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +337,8 @@
 			children = (
 				72FB428C24FEE54A0013EFA5 /* ContainerReduxView.swift */,
 				72FB428A24FEE4030013EFA5 /* AuthenticationReduxView.swift */,
+				72FB429924FFE77D0013EFA5 /* JobListReduxView.swift */,
+				72FB429B24FFF1780013EFA5 /* JobDetailsReduxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -492,8 +498,10 @@
 				72FB428F24FEE78C0013EFA5 /* AppEnvironment.swift in Sources */,
 				72FB427824FEC6770013EFA5 /* JobDetailsMVVMView.swift in Sources */,
 				72FB428424FEDDDA0013EFA5 /* Action.swift in Sources */,
+				72FB429C24FFF1780013EFA5 /* JobDetailsReduxView.swift in Sources */,
 				72FB426124FE9DC20013EFA5 /* UserSessionStore.swift in Sources */,
 				7235ED3C24F803C200836CC0 /* AuthVIPER.swift in Sources */,
+				72FB429A24FFE77D0013EFA5 /* JobListReduxView.swift in Sources */,
 				72FB426D24FEABEB0013EFA5 /* Job.swift in Sources */,
 				72FB427124FEB36B0013EFA5 /* JobListMVVMViewModel.swift in Sources */,
 				72FB426724FEA7C00013EFA5 /* PublisherExtensions.swift in Sources */,

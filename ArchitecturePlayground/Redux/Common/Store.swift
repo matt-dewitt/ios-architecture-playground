@@ -36,25 +36,4 @@ final class Store<State, Action, Environment>: ObservableObject {
             .sink(receiveValue: send)
             .store(in: &cancellables)
     }
-    
-    private var derivedCancellable: AnyCancellable?
-
-    func derived<DerivedState: Equatable, DerivedAction, Void>(deriveState: @escaping (State) -> DerivedState, deriveAction: @escaping (DerivedAction) -> Action) -> Store<DerivedState, DerivedAction, Void> {
-        let store = Store<DerivedState, DerivedAction, Void>(
-            initialState: deriveState(state),
-            reducer: { _, action, _ in
-                self.send(deriveAction(action))
-                return Empty(completeImmediately: true)
-                    .eraseToAnyPublisher()
-            },
-            environment: () as! Void
-        )
-
-        store.derivedCancellable = $state
-            .map(deriveState)
-            .removeDuplicates()
-            .sink { [weak store] in store?.state = $0 }
-
-        return store
-    }
 }

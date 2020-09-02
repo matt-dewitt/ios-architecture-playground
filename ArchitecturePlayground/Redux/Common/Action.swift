@@ -25,5 +25,9 @@ enum AuthenticationAction: Equatable {
 }
 
 enum JobsAction: Equatable {
-    
+    case loadJobs
+    case reloadJobs
+    case jobsLoaded(jobs: [Job])
+    case failedToLoadJobs(errorMessage: String)
+    case viewJobDetails(job: Job)
 }

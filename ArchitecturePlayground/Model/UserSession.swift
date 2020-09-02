@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserSession {
+struct UserSession: Equatable {
     var username: String
     var authToken: String
     var shouldChangePassword = false

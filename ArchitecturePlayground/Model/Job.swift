@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Job: Identifiable {
+struct Job: Identifiable, Equatable {
     var id = UUID()
     var customerName: String
     var jobName: String

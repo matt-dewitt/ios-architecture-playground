@@ -12,14 +12,17 @@ struct ContainerReduxView: View {
     @EnvironmentObject var store: Store<AppState, AppAction, AppEnvironmentProtocol>
     
     var body: some View {
-        if store.state.authentication.userSession != nil {
-            Text("You signed in!")
-        } else {
-            AuthenticationReduxView()
-                .environmentObject(store)
+        NavigationView {
+            if store.state.authentication.userSession != nil {
+                JobListReduxView()
+                    .environmentObject(store)
+            } else {
+                AuthenticationReduxView()
+                    .environmentObject(store)
+            }
         }
     }
-
+    
 }
 
 struct ContainerReduxView_Previews: PreviewProvider {

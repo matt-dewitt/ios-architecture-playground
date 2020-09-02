@@ -12,6 +12,7 @@ import Combine
 typealias Reducer<State, Action, Environment> = (inout State, Action, Environment) -> AnyPublisher<Action, Never>?
 
 func appReducer(state: inout AppState, action: AppAction, environment: AppEnvironmentProtocol) -> AnyPublisher<AppAction, Never>? {
+    print("Handling Action: \(action)")
     switch action {
     case let .authentication(action):
         return authenticationReducer(state: &state.authentication, action: action, environment: environment)
@@ -58,7 +59,34 @@ func authenticationReducer(state: inout AuthenticationState, action: Authenticat
 }
 
 func jobsReducer(state: inout JobsState, action: JobsAction, environment: AppEnvironmentProtocol) -> AnyPublisher<AppAction, Never>? {
-    // Implement your state changes here
+    switch action {
+    case .failedToLoadJobs(let error):
+        state.jobs = []
+        state.isLoadingJobs = false
+        state.errorMessage = error
+    case .jobsLoaded(let jobs):
+        state.jobs = jobs
+        state.isLoadingJobs = false
+    case .loadJobs, .reloadJobs:
+        state.isLoadingJobs = true
+        var error: JobsAPIError? = nil
+        return environment.services.jobsApi.loadJobs()
+            .catch { (apiError) -> AnyPublisher<[Job], Never> in
+                error = apiError
+                return Just([]).eraseToAnyPublisher()
+            }
+            .map { (jobs) -> AppAction in
+                if jobs.isEmpty, let err = error {
+                    return .jobs(action: .failedToLoadJobs(errorMessage: "\(err)"))
+                } else {
+                    return .jobs(action: .jobsLoaded(jobs: jobs))
+                }
+            }
+            .eraseToAnyPublisher()
+    case .viewJobDetails(let job):
+        break
+    }
+    return nil
 }
 
 
@@ -70,3 +98,14 @@ func jobsReducer(state: inout JobsState, action: JobsAction, environment: AppEnv
 //            .replaceError(with: [])
 //            .map { AppAction.setSearchResults(repos: $0) }
 //            .eraseToAnyPublisher()
+//.catch { err in
+//    error = err
+//    return Just([])
+//}
+//.map {
+//    if $0.isEmpty, let err = error {
+//        return .jobs(.failedToLoadJobs(errorMessage: err))
+//    } else {
+//        return .jobs(.jobsLoaded(jobs: $0))
+//    }
+//}

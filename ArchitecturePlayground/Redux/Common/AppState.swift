@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct AppState {
+struct AppState: Equatable {
     var authentication: AuthenticationState
     var jobs: JobsState
 }
 
 struct AuthenticationState: Equatable {
-    static func == (lhs: AuthenticationState, rhs: AuthenticationState) -> Bool {
-        return true
-    }
-    
+
     var userSession: UserSession? = nil
     var isAuthenticating: Bool = false
     var errorMessage: String? = nil
 }
 
-struct JobsState {
-    
+struct JobsState: Equatable {
+    var jobs: [Job] = []
+    var isLoadingJobs: Bool = false
+    var errorMessage: String? = nil
+    var selectedJobDetails: Job? = nil
 }
