@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,21 @@
 		7235ED2224F8038100836CC0 /* ArchitecturePlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED2124F8038100836CC0 /* ArchitecturePlaygroundTests.swift */; };
 		7235ED2D24F8038100836CC0 /* ArchitecturePlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED2C24F8038100836CC0 /* ArchitecturePlaygroundUITests.swift */; };
 		7235ED3C24F803C200836CC0 /* AuthVIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7235ED3B24F803C200836CC0 /* AuthVIPER.swift */; };
+		72C3A7482500245600FF8FAD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72C3A7472500245600FF8FAD /* ComposableArchitecture */; };
+		72C3A74B2500251A00FF8FAD /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C3A74A2500251A00FF8FAD /* AppCore.swift */; };
+		72C3A74E25002C7F00FF8FAD /* RootCAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C3A74D25002C7F00FF8FAD /* RootCAView.swift */; };
+		72C3A75025002EEE00FF8FAD /* AuthenticationCAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C3A74F25002EEE00FF8FAD /* AuthenticationCAView.swift */; };
+		72C3A75225002EFA00FF8FAD /* JobListCAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C3A75125002EFA00FF8FAD /* JobListCAView.swift */; };
+		72C3A75425002F0A00FF8FAD /* JobDetailsCAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C3A75325002F0A00FF8FAD /* JobDetailsCAView.swift */; };
+		72C3A75525004D0800FF8FAD /* ContainerReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428C24FEE54A0013EFA5 /* ContainerReduxView.swift */; };
+		72C3A75625004D0800FF8FAD /* AuthenticationReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428A24FEE4030013EFA5 /* AuthenticationReduxView.swift */; };
+		72C3A75725004D0800FF8FAD /* JobListReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB429924FFE77D0013EFA5 /* JobListReduxView.swift */; };
+		72C3A75825004D0800FF8FAD /* JobDetailsReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB429B24FFF1780013EFA5 /* JobDetailsReduxView.swift */; };
+		72C3A75925004D0C00FF8FAD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427F24FEDD190013EFA5 /* AppState.swift */; };
+		72C3A75A25004D0C00FF8FAD /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428324FEDDDA0013EFA5 /* Action.swift */; };
+		72C3A75B25004D0C00FF8FAD /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428E24FEE78C0013EFA5 /* AppEnvironment.swift */; };
+		72C3A75C25004D0C00FF8FAD /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428124FEDD3E0013EFA5 /* Store.swift */; };
+		72C3A75D25004D0C00FF8FAD /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428524FEDE090013EFA5 /* Reducer.swift */; };
 		72EDCC4724FE8F0900A511A1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC4624FE8F0900A511A1 /* AuthenticationView.swift */; };
 		72EDCC4924FE8F1700A511A1 /* JobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC4824FE8F1700A511A1 /* JobListView.swift */; };
 		72EDCC4B24FE8F2400A511A1 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCC4A24FE8F2400A511A1 /* JobDetailView.swift */; };
@@ -35,15 +50,6 @@
 		72FB427824FEC6770013EFA5 /* JobDetailsMVVMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427724FEC6770013EFA5 /* JobDetailsMVVMView.swift */; };
 		72FB427A24FEC68E0013EFA5 /* JobDetailsMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427924FEC68E0013EFA5 /* JobDetailsMVVMViewModel.swift */; };
 		72FB427C24FEC69E0013EFA5 /* JobDetailsMVVMCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427B24FEC69E0013EFA5 /* JobDetailsMVVMCoordinator.swift */; };
-		72FB428024FEDD190013EFA5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB427F24FEDD190013EFA5 /* AppState.swift */; };
-		72FB428224FEDD3E0013EFA5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428124FEDD3E0013EFA5 /* Store.swift */; };
-		72FB428424FEDDDA0013EFA5 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428324FEDDDA0013EFA5 /* Action.swift */; };
-		72FB428624FEDE090013EFA5 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428524FEDE090013EFA5 /* Reducer.swift */; };
-		72FB428B24FEE4030013EFA5 /* AuthenticationReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428A24FEE4030013EFA5 /* AuthenticationReduxView.swift */; };
-		72FB428D24FEE54A0013EFA5 /* ContainerReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428C24FEE54A0013EFA5 /* ContainerReduxView.swift */; };
-		72FB428F24FEE78C0013EFA5 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB428E24FEE78C0013EFA5 /* AppEnvironment.swift */; };
-		72FB429A24FFE77D0013EFA5 /* JobListReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB429924FFE77D0013EFA5 /* JobListReduxView.swift */; };
-		72FB429C24FFF1780013EFA5 /* JobDetailsReduxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB429B24FFF1780013EFA5 /* JobDetailsReduxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +84,11 @@
 		7235ED2C24F8038100836CC0 /* ArchitecturePlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitecturePlaygroundUITests.swift; sourceTree = "<group>"; };
 		7235ED2E24F8038100836CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7235ED3B24F803C200836CC0 /* AuthVIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVIPER.swift; sourceTree = "<group>"; };
+		72C3A74A2500251A00FF8FAD /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
+		72C3A74D25002C7F00FF8FAD /* RootCAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCAView.swift; sourceTree = "<group>"; };
+		72C3A74F25002EEE00FF8FAD /* AuthenticationCAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCAView.swift; sourceTree = "<group>"; };
+		72C3A75125002EFA00FF8FAD /* JobListCAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListCAView.swift; sourceTree = "<group>"; };
+		72C3A75325002F0A00FF8FAD /* JobDetailsCAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsCAView.swift; sourceTree = "<group>"; };
 		72EDCC4624FE8F0900A511A1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		72EDCC4824FE8F1700A511A1 /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
 		72EDCC4A24FE8F2400A511A1 /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
@@ -114,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72C3A7482500245600FF8FAD /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +177,7 @@
 				72EDCC5624FE971200A511A1 /* MVVM */,
 				7235ED3A24F8039B00836CC0 /* VIPER */,
 				72FB427D24FEDCF00013EFA5 /* Redux */,
+				72FB429D250008B90013EFA5 /* SCA */,
 				72EDCC4424FE8EB200A511A1 /* System */,
 				7235ED1024F8038100836CC0 /* Assets.xcassets */,
 				7235ED1524F8038100836CC0 /* LaunchScreen.storyboard */,
@@ -206,6 +219,25 @@
 				7235ED3B24F803C200836CC0 /* AuthVIPER.swift */,
 			);
 			path = VIPER;
+			sourceTree = "<group>";
+		};
+		72C3A749250024DE00FF8FAD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				72C3A74A2500251A00FF8FAD /* AppCore.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		72C3A74C25002C6800FF8FAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				72C3A74D25002C7F00FF8FAD /* RootCAView.swift */,
+				72C3A74F25002EEE00FF8FAD /* AuthenticationCAView.swift */,
+				72C3A75125002EFA00FF8FAD /* JobListCAView.swift */,
+				72C3A75325002F0A00FF8FAD /* JobDetailsCAView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		72EDCC4424FE8EB200A511A1 /* System */ = {
@@ -343,6 +375,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		72FB429D250008B90013EFA5 /* SCA */ = {
+			isa = PBXGroup;
+			children = (
+				72C3A74C25002C6800FF8FAD /* Views */,
+				72C3A749250024DE00FF8FAD /* Common */,
+			);
+			path = SCA;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,6 +400,9 @@
 			dependencies = (
 			);
 			name = ArchitecturePlayground;
+			packageProductDependencies = (
+				72C3A7472500245600FF8FAD /* ComposableArchitecture */,
+			);
 			productName = ArchitecturePlayground;
 			productReference = 7235ED0724F8037F00836CC0 /* ArchitecturePlayground.app */;
 			productType = "com.apple.product-type.application";
@@ -431,6 +475,9 @@
 				Base,
 			);
 			mainGroup = 7235ECFE24F8037F00836CC0;
+			packageReferences = (
+				72C3A7462500245600FF8FAD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 7235ED0824F8037F00836CC0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -474,34 +521,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72FB428B24FEE4030013EFA5 /* AuthenticationReduxView.swift in Sources */,
+				72C3A75B25004D0C00FF8FAD /* AppEnvironment.swift in Sources */,
 				72FB427324FEB37C0013EFA5 /* JobListMVVMCoordinator.swift in Sources */,
+				72C3A75425002F0A00FF8FAD /* JobDetailsCAView.swift in Sources */,
+				72C3A75C25004D0C00FF8FAD /* Store.swift in Sources */,
 				72EDCC5B24FE978500A511A1 /* AuthenticationMVVMViewModel.swift in Sources */,
-				72FB428D24FEE54A0013EFA5 /* ContainerReduxView.swift in Sources */,
 				72FB427524FEB5AB0013EFA5 /* JobsAPI.swift in Sources */,
-				72FB428024FEDD190013EFA5 /* AppState.swift in Sources */,
 				7235ED0B24F8037F00836CC0 /* AppDelegate.swift in Sources */,
-				72FB428224FEDD3E0013EFA5 /* Store.swift in Sources */,
+				72C3A75D25004D0C00FF8FAD /* Reducer.swift in Sources */,
 				7235ED0D24F8037F00836CC0 /* SceneDelegate.swift in Sources */,
+				72C3A75925004D0C00FF8FAD /* AppState.swift in Sources */,
 				72EDCC4724FE8F0900A511A1 /* AuthenticationView.swift in Sources */,
+				72C3A74E25002C7F00FF8FAD /* RootCAView.swift in Sources */,
+				72C3A75A25004D0C00FF8FAD /* Action.swift in Sources */,
 				72EDCC5924FE974B00A511A1 /* AuthenticationMVVMView.swift in Sources */,
 				72EDCC4B24FE8F2400A511A1 /* JobDetailView.swift in Sources */,
+				72C3A75525004D0800FF8FAD /* ContainerReduxView.swift in Sources */,
 				72FB426F24FEB3550013EFA5 /* JobListMVVMView.swift in Sources */,
 				72EDCC5024FE924500A511A1 /* AuthenticationAPI.swift in Sources */,
 				72FB426424FE9E860013EFA5 /* UserSessionRepository.swift in Sources */,
 				72EDCC5D24FE979600A511A1 /* AuthenticationMVVMCoordinator.swift in Sources */,
-				72FB428624FEDE090013EFA5 /* Reducer.swift in Sources */,
 				72FB427C24FEC69E0013EFA5 /* JobDetailsMVVMCoordinator.swift in Sources */,
+				72C3A74B2500251A00FF8FAD /* AppCore.swift in Sources */,
 				72EDCC6024FE994200A511A1 /* Coordinator.swift in Sources */,
 				72FB427A24FEC68E0013EFA5 /* JobDetailsMVVMViewModel.swift in Sources */,
 				72EDCC4924FE8F1700A511A1 /* JobListView.swift in Sources */,
-				72FB428F24FEE78C0013EFA5 /* AppEnvironment.swift in Sources */,
+				72C3A75225002EFA00FF8FAD /* JobListCAView.swift in Sources */,
+				72C3A75625004D0800FF8FAD /* AuthenticationReduxView.swift in Sources */,
 				72FB427824FEC6770013EFA5 /* JobDetailsMVVMView.swift in Sources */,
-				72FB428424FEDDDA0013EFA5 /* Action.swift in Sources */,
-				72FB429C24FFF1780013EFA5 /* JobDetailsReduxView.swift in Sources */,
 				72FB426124FE9DC20013EFA5 /* UserSessionStore.swift in Sources */,
+				72C3A75825004D0800FF8FAD /* JobDetailsReduxView.swift in Sources */,
+				72C3A75025002EEE00FF8FAD /* AuthenticationCAView.swift in Sources */,
 				7235ED3C24F803C200836CC0 /* AuthVIPER.swift in Sources */,
-				72FB429A24FFE77D0013EFA5 /* JobListReduxView.swift in Sources */,
+				72C3A75725004D0800FF8FAD /* JobListReduxView.swift in Sources */,
 				72FB426D24FEABEB0013EFA5 /* Job.swift in Sources */,
 				72FB427124FEB36B0013EFA5 /* JobListMVVMViewModel.swift in Sources */,
 				72FB426724FEA7C00013EFA5 /* PublisherExtensions.swift in Sources */,
@@ -832,6 +884,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72C3A7462500245600FF8FAD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72C3A7472500245600FF8FAD /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72C3A7462500245600FF8FAD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7235ECFF24F8037F00836CC0 /* Project object */;
 }

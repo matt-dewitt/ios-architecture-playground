@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AuthenticationReduxView: View {
-    @EnvironmentObject var store: Store<AppState, AppAction, AppEnvironmentProtocol>
+    @EnvironmentObject var store: StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>
     
     @State var username: String = ""
     @State var password: String = ""

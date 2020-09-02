@@ -9,22 +9,22 @@
 import Foundation
 
 
-protocol AppEnvironmentProtocol {
-    var services: AppEnvironmentServicesProtocol { get set }
+protocol AppEnvironmentReduxProtocol {
+    var services: AppEnvironmentServicesReduxProtocol { get set }
 }
 
-protocol AppEnvironmentServicesProtocol {
+protocol AppEnvironmentServicesReduxProtocol {
     var authenticationApi: AuthenticationAPIProtocol { get set }
     var userSessionStore: UserSessionStoreProtocol { get set }
     var jobsApi: JobsAPIProtocol { get set }
 }
 
-struct AppEnvironment: AppEnvironmentProtocol {
-    var services: AppEnvironmentServicesProtocol = MockAppServices()
+struct AppEnvironmentRedux: AppEnvironmentReduxProtocol {
+    var services: AppEnvironmentServicesReduxProtocol = MockAppServicesRedux()
     
 }
 
-struct MockAppServices: AppEnvironmentServicesProtocol {
+struct MockAppServicesRedux: AppEnvironmentServicesReduxProtocol {
     var authenticationApi: AuthenticationAPIProtocol = MockAuthenticationAPI()
     var userSessionStore: UserSessionStoreProtocol = MockUserSessionStore()
     var jobsApi: JobsAPIProtocol = MockJobsAPI()

@@ -8,26 +8,21 @@
 
 import Foundation
 
-enum AppAction: Equatable {
-    case authentication(action: AuthenticationAction)
-    case jobs(action: JobsAction)
+enum AppActionRedux: Equatable {
+    case authentication(action: AuthenticationActionRedux)
+    case jobs(action: JobsActionRedux)
 }
 
-enum AuthenticationAction: Equatable {
-    static func == (lhs: AuthenticationAction, rhs: AuthenticationAction) -> Bool {
-        return true
-    }
-    
+enum AuthenticationActionRedux: Equatable {
     case authenticate(username: String, password: String)
     case saveUserSession(session: UserSession)
     case authenticationSucceeded(session: UserSession)
     case authenticationFailed(errorMessage: String)
 }
 
-enum JobsAction: Equatable {
+enum JobsActionRedux: Equatable {
     case loadJobs
     case reloadJobs
     case jobsLoaded(jobs: [Job])
     case failedToLoadJobs(errorMessage: String)
-    case viewJobDetails(job: Job)
 }

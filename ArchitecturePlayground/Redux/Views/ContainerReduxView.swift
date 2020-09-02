@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContainerReduxView: View {
-    @EnvironmentObject var store: Store<AppState, AppAction, AppEnvironmentProtocol>
+    @EnvironmentObject var store: StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>
     
     var body: some View {
         NavigationView {

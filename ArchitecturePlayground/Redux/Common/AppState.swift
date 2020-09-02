@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct AppState: Equatable {
-    var authentication: AuthenticationState
-    var jobs: JobsState
+struct AppStateRedux: Equatable {
+    var authentication: AuthenticationStateRedux
+    var jobs: JobsStateRedux
 }
 
-struct AuthenticationState: Equatable {
+struct AuthenticationStateRedux: Equatable {
 
     var userSession: UserSession? = nil
     var isAuthenticating: Bool = false
     var errorMessage: String? = nil
 }
 
-struct JobsState: Equatable {
+struct JobsStateRedux: Equatable {
     var jobs: [Job] = []
     var isLoadingJobs: Bool = false
     var errorMessage: String? = nil

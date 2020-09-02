@@ -1,5 +1,5 @@
 //
-//  JobListReduxView.swift
+//  JobListCAView.swift
 //  ArchitecturePlayground
 //
 //  Created by Matthew DeWitt on 9/2/20.
@@ -7,57 +7,56 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
-struct JobListReduxView: View {
-    @EnvironmentObject var store: StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>
-    
-    init() {
-        
-    }
+struct JobListCAView: View {
+    let store: Store<JobsStateCA, JobsActionCA>
     
     var body: some View {
-        ZStack {
-            if store.state.jobs.isLoadingJobs {
-                Text("Please wait...")
-            } else {
-                if !store.state.jobs.jobs.isEmpty {
-                    ScrollView {
-                        VStack(spacing: 24) {
-                            ForEach(store.state.jobs.jobs) { job in
-                                JobListReduxItemView(job: job)
-                                    .environmentObject(store)
-                            }
-                        }
-                        .padding(4)
-                    }
+        WithViewStore(store) { viewStore in
+            ZStack {
+                if viewStore.state.isLoadingJobs {
+                    Text("Please wait...")
                 } else {
-                    if let error = store.state.jobs.errorMessage {
-                        VStack {
-                            Text(error)
-                                .foregroundColor(.red)
-                            
-                            Button(action:didTapTryAgain) {
-                                Text("Try Again")
+                    if !viewStore.state.jobs.isEmpty {
+                        ScrollView {
+                            VStack(spacing: 24) {
+                                ForEach(viewStore.state.jobs) { job in
+                                    JobListCAItemView(job: job)
+                                }
                             }
+                            .padding(4)
                         }
                     } else {
-                        Text("No jobs found")
+                        if let error = viewStore.state.errorMessage {
+                            VStack {
+                                Text(error)
+                                    .foregroundColor(.red)
+                                
+                                Button(action:{
+                                    viewStore.send(.reloadJobs)
+                                }) {
+                                    Text("Try Again")
+                                }
+                            }
+                        } else {
+                            Text("No jobs found")
+                        }
                     }
                 }
             }
-        }
-        .navigationTitle("Jobs")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(trailing: Button(action:didTapTryAgain) { Text("Reload") })
-        .onAppear {
-            if store.state.jobs.jobs.isEmpty {
-                store.send(.jobs(action:.loadJobs))
+            .navigationTitle("Jobs")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: Button(action:{ /* TODO: send auth action */ }) { Text("Sign Out") },
+                trailing: Button(action:{ viewStore.send(.reloadJobs) }) { Text("Reload") }
+            )
+            .onAppear {
+                if viewStore.state.jobs.isEmpty {
+                    viewStore.send(.loadJobs)
+                }
             }
         }
-    }
-    
-    private func didTapTryAgain() {
-        store.send(.jobs(action:.reloadJobs))
     }
 }
 
@@ -100,8 +99,7 @@ struct JobListReduxView: View {
 //    }
 //}
 
-struct JobListReduxItemView: View {
-    @EnvironmentObject var store: StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>
+struct JobListCAItemView: View {
     
     var job: Job
     
@@ -139,7 +137,7 @@ struct JobListReduxItemView: View {
                 }
             }
             
-            NavigationLink(destination: JobDetailsReduxView(job: job).environmentObject(store)) {
+            NavigationLink(destination: JobDetailsCAView(job: job)) {
                 Text("View Job")
                     .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
@@ -151,8 +149,5 @@ struct JobListReduxItemView: View {
         .border(Color.gray, width: 0.5)
     }
     
-    private func didTapViewJob() {
-        //viewJobHandler()
-    }
 }
 

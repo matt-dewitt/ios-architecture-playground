@@ -1,5 +1,5 @@
 //
-//  JobDetailsReduxView.swift
+//  JobDetailsCAView.swift
 //  ArchitecturePlayground
 //
 //  Created by Matthew DeWitt on 9/2/20.
@@ -8,8 +8,7 @@
 
 import SwiftUI
 
-struct JobDetailsReduxView: View {
-    @EnvironmentObject var store: StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>
+struct JobDetailsCAView: View {
     var job: Job
     
     private var dateFormatter: DateFormatter {
@@ -84,17 +83,9 @@ struct JobDetailsReduxView: View {
     }
 }
 
-//struct JobDetailsReduxView_Previews: PreviewProvider {
-//    private class PreviewViewModel: JobDetailsMVVMViewModelProtocol {
-//        var job: Job
-//
-//        init(job: Job) {
-//            self.job = job
-//        }
-//    }
-//
-//    static var previews: some View {
-//        JobDetailsMVVMView(viewModel: PreviewViewModel(job: Job.mockData()[0]))
-//    }
-//}
+struct JobDetailsCAView_Previews: PreviewProvider {
+    static var previews: some View {
+        JobDetailsCAView(job: Job.mockData()[0])
+    }
+}
 

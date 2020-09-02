@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import ComposableArchitecture
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -24,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             //configureWindowForMVVM(window)
             //configureWindowForVIPER(window)
-            configureWindowForRedux(window)
+            //configureWindowForRedux(window)
+            configureWindowForSCA(window)
             
             self.window = window
             window.makeKeyAndVisible()
@@ -43,17 +45,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func configureWindowForRedux(_ window: UIWindow) {
-        let state = AppState(
-            authentication: AuthenticationState(),
-            jobs: JobsState()
+        let state = AppStateRedux(
+            authentication: AuthenticationStateRedux(),
+            jobs: JobsStateRedux()
         )
-        let store = Store<AppState, AppAction, AppEnvironmentProtocol>(
+        let store = StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>(
             initialState: state,
             reducer: appReducer(state:action:environment:),
-            environment: AppEnvironment())
-        
+            environment: AppEnvironmentRedux())
+
         let containerView = ContainerReduxView().environmentObject(store)
         let viewController = UIHostingController(rootView: containerView)
+        window.rootViewController = viewController
+    }
+    
+    private func configureWindowForSCA(_ window: UIWindow) {
+        let store = Store(
+            initialState: AppStateCA(),
+            reducer: appReducer.debug(),
+            environment: AppEnvironmentCA(
+                authenticationApi: MockAuthenticationAPI(),
+                userSessionStore: MockUserSessionStore(),
+                jobsApi: MockJobsAPI(),
+                mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+            )
+        )
+        let rootView = RootCAView(store: store)
+        let viewController = UIHostingController(rootView: rootView)
         window.rootViewController = viewController
     }
 

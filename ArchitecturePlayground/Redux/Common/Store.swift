@@ -9,16 +9,16 @@
 import Foundation
 import Combine
 
-final class Store<State, Action, Environment>: ObservableObject {
+final class StoreRedux<State, Action, Environment>: ObservableObject {
     @Published private(set) var state: State
 
     private let environment: Environment
-    private let reducer: Reducer<State, Action, Environment>
+    private let reducer: ReducerRedux<State, Action, Environment>
     private var cancellables: Set<AnyCancellable> = []
 
     init(
         initialState: State,
-        reducer: @escaping Reducer<State, Action, Environment>,
+        reducer: @escaping ReducerRedux<State, Action, Environment>,
         environment: Environment
     ) {
         self.state = initialState

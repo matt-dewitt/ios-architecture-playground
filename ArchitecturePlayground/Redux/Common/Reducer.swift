@@ -9,9 +9,9 @@
 import Foundation
 import Combine
 
-typealias Reducer<State, Action, Environment> = (inout State, Action, Environment) -> AnyPublisher<Action, Never>?
+typealias ReducerRedux<State, Action, Environment> = (inout State, Action, Environment) -> AnyPublisher<Action, Never>?
 
-func appReducer(state: inout AppState, action: AppAction, environment: AppEnvironmentProtocol) -> AnyPublisher<AppAction, Never>? {
+func appReducer(state: inout AppStateRedux, action: AppActionRedux, environment: AppEnvironmentReduxProtocol) -> AnyPublisher<AppActionRedux, Never>? {
     print("Handling Action: \(action)")
     switch action {
     case let .authentication(action):
@@ -22,7 +22,7 @@ func appReducer(state: inout AppState, action: AppAction, environment: AppEnviro
 }
 
 
-func authenticationReducer(state: inout AuthenticationState, action: AuthenticationAction, environment: AppEnvironmentProtocol) -> AnyPublisher<AppAction, Never>?  {
+func authenticationReducer(state: inout AuthenticationStateRedux, action: AuthenticationActionRedux, environment: AppEnvironmentReduxProtocol) -> AnyPublisher<AppActionRedux, Never>?  {
     switch action {
     case .authenticate(let username, let password):
         state.isAuthenticating = true
@@ -33,9 +33,9 @@ func authenticationReducer(state: inout AuthenticationState, action: Authenticat
             }
             .map {
                 if let err = $0.error {
-                    return .authentication(action: AuthenticationAction.authenticationFailed(errorMessage: err))
+                    return .authentication(action: AuthenticationActionRedux.authenticationFailed(errorMessage: err))
                 } else {
-                    return .authentication(action: AuthenticationAction.saveUserSession(session: $0))
+                    return .authentication(action: AuthenticationActionRedux.saveUserSession(session: $0))
                 }
             }
             .eraseToAnyPublisher()
@@ -47,7 +47,7 @@ func authenticationReducer(state: inout AuthenticationState, action: Authenticat
     case .saveUserSession(let session):
         return environment.services.userSessionStore.saveUserSession(session)
             .replaceError(with: session)
-            .map { .authentication(action: AuthenticationAction.authenticationSucceeded(session: $0)) }
+            .map { .authentication(action: AuthenticationActionRedux.authenticationSucceeded(session: $0)) }
             .eraseToAnyPublisher()
     
     case .authenticationSucceeded(let session):
@@ -58,7 +58,7 @@ func authenticationReducer(state: inout AuthenticationState, action: Authenticat
     return nil
 }
 
-func jobsReducer(state: inout JobsState, action: JobsAction, environment: AppEnvironmentProtocol) -> AnyPublisher<AppAction, Never>? {
+func jobsReducer(state: inout JobsStateRedux, action: JobsActionRedux, environment: AppEnvironmentReduxProtocol) -> AnyPublisher<AppActionRedux, Never>? {
     switch action {
     case .failedToLoadJobs(let error):
         state.jobs = []
@@ -75,7 +75,7 @@ func jobsReducer(state: inout JobsState, action: JobsAction, environment: AppEnv
                 error = apiError
                 return Just([]).eraseToAnyPublisher()
             }
-            .map { (jobs) -> AppAction in
+            .map { (jobs) -> AppActionRedux in
                 if jobs.isEmpty, let err = error {
                     return .jobs(action: .failedToLoadJobs(errorMessage: "\(err)"))
                 } else {
@@ -83,29 +83,7 @@ func jobsReducer(state: inout JobsState, action: JobsAction, environment: AppEnv
                 }
             }
             .eraseToAnyPublisher()
-    case .viewJobDetails(let job):
-        break
     }
     return nil
 }
 
-
-//    case let .setSearchResults(repos):
-//        state.searchResult = repos
-//    case let .search(query):
-//        return environment.service
-//            .searchPublisher(matching: query)
-//            .replaceError(with: [])
-//            .map { AppAction.setSearchResults(repos: $0) }
-//            .eraseToAnyPublisher()
-//.catch { err in
-//    error = err
-//    return Just([])
-//}
-//.map {
-//    if $0.isEmpty, let err = error {
-//        return .jobs(.failedToLoadJobs(errorMessage: err))
-//    } else {
-//        return .jobs(.jobsLoaded(jobs: $0))
-//    }
-//}
