@@ -14,10 +14,13 @@ struct RootCAView: View {
     
     var body: some View {
         WithViewStore(store) { viewStore in
-            NavigationView {
-                if viewStore.state.authentication.userSession != nil {
+            
+            if viewStore.state.authentication.userSession != nil {
+                NavigationView {
                     JobListCAView(store: self.store.scope(state: { $0.jobs }, action: AppActionCA.jobs))
-                } else {
+                }
+            } else {
+                NavigationView {
                     AuthenticationCAView(store: self.store.scope(state: { $0.authentication }, action: AppActionCA.authentication))
                 }
             }
@@ -25,20 +28,21 @@ struct RootCAView: View {
     }
 }
 
-//struct RootCAView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RootCAView()
-//    }
-//}
+struct RootCAView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        RootCAView(
+            store: Store(
+                initialState: AppStateCA(),
+                reducer: appReducer,
+                environment: AppEnvironmentCA(
+                    authenticationApi: MockAuthenticationAPI(),
+                    userSessionStore: MockUserSessionStore(),
+                    jobsApi: MockJobsAPI(),
+                    mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                )
+            )
+        )
+    }
+}
 
-/*
- NavigationView {
-     if store.state.authentication.userSession != nil {
-         JobListReduxView()
-             .environmentObject(store)
-     } else {
-         AuthenticationReduxView()
-             .environmentObject(store)
-     }
- }
- */

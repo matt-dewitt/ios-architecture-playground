@@ -48,7 +48,6 @@ struct JobListCAView: View {
             .navigationTitle("Jobs")
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(
-                leading: Button(action:{ /* TODO: send auth action */ }) { Text("Sign Out") },
                 trailing: Button(action:{ viewStore.send(.reloadJobs) }) { Text("Reload") }
             )
             .onAppear {
@@ -60,44 +59,28 @@ struct JobListCAView: View {
     }
 }
 
-//struct JobListReduxView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            JobListMVVMView(
-//                viewModel: PreviewViewModel(
-//                    jobs: Job.mockData(),
-//                    isLoadingJobs: false,
-//                    errorMessage: nil
-//                )
-//            )
-//
-//            JobListMVVMView(
-//                viewModel: PreviewViewModel(
-//                    jobs: [],
-//                    isLoadingJobs: false,
-//                    errorMessage: nil
-//                )
-//            )
-//
-//            JobListMVVMView(
-//                viewModel: PreviewViewModel(
-//                    jobs: [],
-//                    isLoadingJobs: true,
-//                    errorMessage: nil
-//                )
-//            )
-//
-//            JobListMVVMView(
-//                viewModel: PreviewViewModel(
-//                    jobs: [],
-//                    isLoadingJobs: false,
-//                    errorMessage: "Bad stuff happened"
-//                )
-//            )
-//
-//        }
-//    }
-//}
+struct JobListCAView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            JobListCAView(
+                store: Store(
+                    initialState: JobsStateCA(
+                        jobs: Job.mockData(),
+                        isLoadingJobs: false,
+                        errorMessage: nil
+                    ),
+                    reducer: jobsReducer,
+                    environment: AppEnvironmentCA(
+                        authenticationApi: MockAuthenticationAPI(),
+                        userSessionStore: MockUserSessionStore(),
+                        jobsApi: MockJobsAPI(),
+                        mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                    )
+                )
+            )
+        }
+    }
+}
 
 struct JobListCAItemView: View {
     

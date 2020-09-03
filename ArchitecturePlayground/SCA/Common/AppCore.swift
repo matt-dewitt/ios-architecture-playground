@@ -26,7 +26,6 @@ struct JobsStateCA: Equatable {
     var jobs: [Job] = []
     var isLoadingJobs: Bool = false
     var errorMessage: String? = nil
-    var selectedJobDetails: Job? = nil
 }
 
 // MARK: - Actions
@@ -42,7 +41,6 @@ enum AuthenticationActionCA: Equatable {
     case saveUserSessionResponse(response: Result<UserSession, UserSessionStoreError>)
     case authenticationSucceeded(session: UserSession)
     case authenticationFailed(errorMessage: String)
-    case signOut
 }
 
 enum JobsActionCA: Equatable {
@@ -66,6 +64,7 @@ let authenticationReducer = Reducer<AuthenticationStateCA, AuthenticationActionC
     switch action {
     
     case .authenticate(let username, let password):
+        state.errorMessage = nil
         state.isAuthenticating = true
         return environment.authenticationApi.authenticate(username: username, password: password)
             .eraseToEffect()
@@ -101,10 +100,6 @@ let authenticationReducer = Reducer<AuthenticationStateCA, AuthenticationActionC
     case .authenticationFailed(let errorMessage):
         state.isAuthenticating = false
         state.errorMessage = errorMessage
-        return .none
-        
-    case .signOut:
-        state.userSession = nil
         return .none
     }
 }

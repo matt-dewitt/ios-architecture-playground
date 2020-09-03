@@ -60,6 +60,15 @@ struct AuthenticationReduxView: View {
 
 struct AuthenticationReduxView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationReduxView()
+        let state = AppStateRedux(
+            authentication: AuthenticationStateRedux(),
+            jobs: JobsStateRedux()
+        )
+        let store = StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>(
+            initialState: state,
+            reducer: appReducer(state:action:environment:),
+            environment: AppEnvironmentRedux())
+        
+        AuthenticationReduxView().environmentObject(store)
     }
 }

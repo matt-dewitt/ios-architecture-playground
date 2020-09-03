@@ -60,8 +60,23 @@ struct AuthenticationCAView: View {
     
 }
 
-//struct AuthenticationCAView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AuthenticationCAView()
-//    }
-//}
+struct AuthenticationCAView_Previews: PreviewProvider {
+    static var previews: some View {
+        AuthenticationCAView(
+            store: Store(
+                initialState: AuthenticationStateCA(
+                    userSession: nil,
+                    isAuthenticating: false,
+                    errorMessage: nil
+                ),
+                reducer: authenticationReducer,
+                environment: AppEnvironmentCA(
+                    authenticationApi: MockAuthenticationAPI(),
+                    userSessionStore: MockUserSessionStore(),
+                    jobsApi: MockJobsAPI(),
+                    mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                )
+            )
+        )
+    }
+}

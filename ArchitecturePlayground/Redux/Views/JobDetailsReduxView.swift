@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct JobDetailsReduxView: View {
-    @EnvironmentObject var store: StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>
     var job: Job
     
     private var dateFormatter: DateFormatter {
@@ -84,17 +83,10 @@ struct JobDetailsReduxView: View {
     }
 }
 
-//struct JobDetailsReduxView_Previews: PreviewProvider {
-//    private class PreviewViewModel: JobDetailsMVVMViewModelProtocol {
-//        var job: Job
-//
-//        init(job: Job) {
-//            self.job = job
-//        }
-//    }
-//
-//    static var previews: some View {
-//        JobDetailsMVVMView(viewModel: PreviewViewModel(job: Job.mockData()[0]))
-//    }
-//}
+struct JobDetailsReduxView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        JobDetailsReduxView(job: Job.mockData()[0])
+    }
+}
 

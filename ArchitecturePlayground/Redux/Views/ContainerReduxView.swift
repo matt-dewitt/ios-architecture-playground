@@ -27,6 +27,15 @@ struct ContainerReduxView: View {
 
 struct ContainerReduxView_Previews: PreviewProvider {
     static var previews: some View {
-        ContainerReduxView()
+        let state = AppStateRedux(
+            authentication: AuthenticationStateRedux(),
+            jobs: JobsStateRedux()
+        )
+        let store = StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>(
+            initialState: state,
+            reducer: appReducer(state:action:environment:),
+            environment: AppEnvironmentRedux())
+        
+        ContainerReduxView().environmentObject(store)
     }
 }

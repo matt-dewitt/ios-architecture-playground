@@ -20,7 +20,7 @@ enum JobsAPIError: Error {
 class MockJobsAPI: JobsAPIProtocol {
     func loadJobs() -> AnyPublisher<[Job], JobsAPIError> {
         let randomInt = Int.random(in: 1..<100)
-        if randomInt < 10 {
+        if randomInt < 25 {
             return Fail(error: JobsAPIError.failedToLoadJobs)
                 .eraseToAnyPublisher()
         } else {

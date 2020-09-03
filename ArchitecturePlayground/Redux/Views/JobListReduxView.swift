@@ -61,44 +61,22 @@ struct JobListReduxView: View {
     }
 }
 
-//struct JobListReduxView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            JobListMVVMView(
-//                viewModel: PreviewViewModel(
-//                    jobs: Job.mockData(),
-//                    isLoadingJobs: false,
-//                    errorMessage: nil
-//                )
-//            )
-//
-//            JobListMVVMView(
-//                viewModel: PreviewViewModel(
-//                    jobs: [],
-//                    isLoadingJobs: false,
-//                    errorMessage: nil
-//                )
-//            )
-//
-//            JobListMVVMView(
-//                viewModel: PreviewViewModel(
-//                    jobs: [],
-//                    isLoadingJobs: true,
-//                    errorMessage: nil
-//                )
-//            )
-//
-//            JobListMVVMView(
-//                viewModel: PreviewViewModel(
-//                    jobs: [],
-//                    isLoadingJobs: false,
-//                    errorMessage: "Bad stuff happened"
-//                )
-//            )
-//
-//        }
-//    }
-//}
+struct JobListReduxView_Previews: PreviewProvider {
+    static var previews: some View {
+        let state = AppStateRedux(
+            authentication: AuthenticationStateRedux(),
+            jobs: JobsStateRedux()
+        )
+        let store = StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>(
+            initialState: state,
+            reducer: appReducer(state:action:environment:),
+            environment: AppEnvironmentRedux())
+        
+        Group {
+            JobListReduxView().environmentObject(store)
+        }
+    }
+}
 
 struct JobListReduxItemView: View {
     @EnvironmentObject var store: StoreRedux<AppStateRedux, AppActionRedux, AppEnvironmentReduxProtocol>
