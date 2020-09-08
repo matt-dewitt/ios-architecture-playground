@@ -22,8 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            configureWindowForMVVM(window)
-            //configureWindowForVIPER(window)
+            //configureWindowForMVVM(window)
+            configureWindowForVIPER(window)
             //configureWindowForRedux(window)
             
             self.window = window
@@ -38,8 +38,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         authCoordinator.start()
     }
     
-    private func configureWindowForVIPER(window: UIWindow) {
-        
+    private func configureWindowForVIPER(_ window: UIWindow) {
+        let repo = MockUserSessionRepository(authenticationApi: MockAuthenticationAPI(), userSessionStore: MockUserSessionStore())
+        let viewController = AuthModule.build(for: (), with: AuthModule.Dependencies(userRepository: repo, jobsAPI: MockJobsAPI()))
+        window.rootViewController = UINavigationController(rootViewController: viewController)
     }
     
     private func configureWindowForRedux(window: UIWindow) {
